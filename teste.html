@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+   
+
+   <script>
+   //Função para cadastrar o usuário
+        function cadastrar(event){
+            const nome = document.getElementById("input-nome").value; 
+            event.preventDefault();
+            alert("Dados do(a) " + nome + " cadastrados!");
+            document.getElementById("form-cadastro").reset(); 
+            document.getElementById("toggleIcon").className = "fa-solid fa-eye";
+        }
+//Função para alternar a visibilidade da senha
+        function togglePassword() {
+            const inputSenha = document.getElementById('input-senha');
+            const icon = document.getElementById('toggleIcon');
+ 
+            if (inputSenha.type === 'password') {
+                inputSenha.type = 'text';
+                icon.className = "fa-solid fa-eye-slash";
+            } else {
+                inputSenha.type = 'password';
+                icon.className = "fa-solid fa-eye";
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <main>
+            <form id="form-Cadastro" onsubmit="cadastrar(event)">
+                <h1>Formulário</h1>
+
+                <div class="grupoLabelInput">
+                    <label for="input-nome">Nome</label>
+                    <input id="input-nome" placeholder=" Digite seu Nome" required>
+                </div>
+                
+                <div class="grupoLabelInput">
+                    <label for="input-email">Email</label>
+                    <input id="input-email" placeholder=" Digite seu Email" required>
+                </div>
+                
+                <div class="grupoLabelInput">
+                    <label for="input-senha">Senha</label>
+                    <input id="input-senha" placeholder=" Digite sua senha" required>
+                </div>
+
+                <button id="btn-cadastrar" type="submit">Cadastrar</button>
+
+            </form>
+        </main>
+    </body>
+</html>
