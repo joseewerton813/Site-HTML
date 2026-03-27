@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários cadastrados</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="teste.js"></script>
+    <script src="teste3.js"></script>
+    <script src="teste2.js"></script>
+
+   
+</head>
+
+<body id="body">
+    <div id="overlay" class="overlay" style="display: none;">
+        <div class="modal">
+            <p id="mensagem"></p>
+            <button class="button-login" onclick="fecharOverlay()">Fechar</button>
+        </div>
+    </div>
+
+    <div id="perfil" class="perfil">
+        <div class="perfil-lista">
+            <button class="perfil-button">Preferencias</button>
+            <button class="perfil-button-sair" onclick="voltar()">Sair</button>
+        </div>
+    </div>
+
+    <header class="header-padrao">
+        <h1>cadastrado de Atletas</h1>
+        <button onclick="abrirPerfil()" class="perfil-usuario"></button>
+    </header>
+    <nav id="abas" class="abas">
+        <button id="btn-cadastrar" class="btn-aba" onclick="onCadastrarClick()">Cadastrar</button>
+        <button id="btn-listar" class="btn-aba" onclick="onListarClick()">Listar</button>
+    </nav>
+    <div id="container-lista" class="container">
+        <h1 class="subtitulo">Atletas cadastrados</h1>
+        <table class="tabela" id="tabela-atletas">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Nacionalidade</th>
+                    <th>Data de Nascimento</th>
+                    <th>cpf</th>
+                    <th>Modalidade</th>
+                    <th>Gênero</th>
+                    <th>Categoria</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>Tipo sanguíneo</th>
+                    <th>Alergias</th>
+                    <th>Histórico</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-atletas-body"> 
+            </tbody>
+        </table>
+
+    </div>
+    <form id="container-cadastro" class="container" onsubmit="cadastrarAtleta(event)">
+        <h1 class="titulo">Cadastrar Atleta</h1>
+        <h4 class="subtitulo">
+            Dados Pessoais
+        </h4>
+        <div class="grupoLabelInput">
+            <label for="input-nome-atleta">Nome Completo</label>
+            <input id="input-nome-atleta" placeholder="digite o nome completo" type="text" required>
+        </div>
+        <div class="linha">
+            <div class="grupoLabelInput">
+                <label for="input-cpf">CPF</label>
+                <input id="input-cpf" placeholder="CPF" type="text" required>
+        </div>
+        <div class="grupoLabelInput">
+            <label for="input-modalidade">Modalidade</label>
+            <input id="input-modalidade" placeholder="Modalidade" type="text" required>
+        </div>
+    </div>
+
+    <div class="linha">
+        <div class="grupoLabelInput">
+            <label for="input-genero">Gênero</label>
+            <input id="input-genero" placeholder="Gênero" type="text" required>
+    </div>
+
+    <div class="grupoLabelInput">
+        <label for="input-categoria">Categoria</label>
+        <select class="input-default" id="input-categoria" required>
+            <option disabled selected>Selecione a categoria</option>
+            <option value="1">Sub-20</option>
+            <option value="2">Sub-23</option>
+            <option value="3">Sênior</option>
+        </select>
+    </div>
+</div>
+<h4 class="subtitulo">Dados Médico</h4>
+<div class="linha">
+    <div class="grupoLabelInput">
+        <label for = "input-peso">Peso (Kg)</label>
+        <input id="input-peso" placeholder="Ex: 75" type="number" required>
+</div>
+
+<div class="grupoLabelInput">
+    <label for="input-altura">Altura</label>
+    <input id="input-altura" placeholder="Ex: 1.80" type="number" required>
+  </div>
+</div>
+<div class="grupoLabelInput">
+    <label for="edit-alergias">Alergias</label>
+    <input id="edit-alergias" placeholder="Ex: Dipirona, Loratadina, etc" type="text" required>
+</div>
+<div class="grupoLabelInput">
+    <label for="edit-historico">Histórico Médico</label>
+    <input id="edit-historico" placeholder="Ex: Cirurgia na clavícula, pedra nos rins" type="text" required>
+</div>
+<div class="linha">
+    <button class="button-default" type="submit">
+        Atualizar
+    </button>
+    <button class="button-default dark-blue" onclick="onListarClick()">
+        Voltar
+    </button>
+</div>
+
+</form>
+
+</body>
+    
+
+</html>
